@@ -1,0 +1,242 @@
+body
+{
+    background-color: #DC0A2D;
+}
+#ovalgrisazul {
+    background-color: #CFCFD4;
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    border-radius: 80px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid black;
+    margin-left: 15px;
+    margin-top: 10px;
+}
+
+#ovalazul {
+    background-color: #28A9FC;
+    width: 90px;
+    height: 90px;
+    border-radius: 50%;
+    border: 1px solid black;
+
+}
+
+.arriba
+{
+    width: 101%;
+    height: 130px;
+    margin: -0.5%;
+    border-bottom: 1px solid black;
+    
+
+}
+#ovalazulsombra
+{
+    background-color: #1F8AD0;
+    width: 85px;
+    height: 85px;
+    border-radius: 50%;
+   position: absolute;
+   left: 10px;
+   top: 10px;
+   
+}
+#ovalazuldentro
+{
+    background-color: #28A9FC;
+    width: 79px;
+    height: 80px;
+    border-radius: 50%;
+   
+    position:absolute;
+}
+
+#ovalazulluz {
+    position: absolute; 
+    left: 10px;
+    top: 10px;
+    width: 23px; 
+    height: 23px; 
+    background: #A2D9FCFF; 
+    border-radius: 50%; 
+  }
+
+
+#rojo
+{
+    
+    height: 25px;
+    width: 25px;
+    position: absolute;
+    left: 150px;
+    top: 10px;
+}
+
+#ovalgrisrojo {
+    background-color: #CFCFD4;
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 10% solid black;
+  
+    overflow: hidden; /* Para recortar el contenido que exceda el tamaño del span */
+}
+
+#ovalrojo {
+    background-color: #FC285EFF;
+    width: 22.5px;
+    height: 22.5px;
+    border-radius: 50%;
+    border: 10% solid black;
+}
+
+#ovalrojosombra {
+    background-color: #D01F1FFF;
+    width: 21.5px;
+    height: 21.5px;
+    border-radius: 50%;
+    position: absolute;
+    left: 1.5px;
+    top: 1.5px;
+}
+
+#ovalrojodentro {
+    background-color: #FC285EFF;
+    width: 19.75px;
+    height: 20px;
+    border-radius: 50%;
+    position: absolute;
+}
+
+#ovalrojoluz {
+    position: absolute;
+    left: 1.5px;
+    top: 5px;
+    width: 5.75px;
+    height: 5.75px;
+    background: #FCA2A2FF;
+    border-radius: 50%;
+}
+#amarillo
+{
+    
+    height: 25px;
+    width: 25px;
+    position: absolute;
+    left: 200px;
+    top: 10px;
+    
+}
+
+#ovalgrisverde {
+    background-color: #CFCFD4;
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 10% solid black;
+  
+    overflow: hidden; /* Para recortar el contenido que exceda el tamaño del span */
+}
+
+#ovalverde {
+    background-color: #28FC9A;;
+    width: 22.5px;
+    height: 22.5px;
+    border-radius: 50%;
+    border: 10% solid black;
+}
+
+#ovalverdesombra {
+    background-color: #1FDC8A;
+    width: 21.5px;
+    height: 21.5px;
+    border-radius: 50%;
+    position: absolute;
+    left: 1.5px;
+    top: 1.5px;
+}
+
+#ovalverdedentro {
+    background-color: #28FC9A;
+    width: 19.75px;
+    height: 20px;
+    border-radius: 50%;
+    position: absolute;
+}
+
+#ovalverdeluz {
+    position: absolute;
+    left: 1.5px;
+    top: 5px;
+    width: 5.75px;
+    height: 5.75px;
+    background: #A2FCB5;
+    border-radius: 50%;
+}
+#verde
+{
+   
+    height: 25px;
+    width: 25px;
+    position: absolute;
+    left: 250px;
+    top: 10px;
+}
+#ovalgrisamarillo {
+    background-color: #CFCFD4;
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 10% solid black;
+  
+    overflow: hidden; /* Para recortar el contenido que exceda el tamaño del span */
+}
+
+#ovalamarillo {
+    background-color: #FCD91FFF;;
+    width: 22.5px;
+    height: 22.5px;
+    border-radius: 50%;
+    border: 10% solid black;
+}
+
+#ovalamarillosombra {
+    background-color: #FCD91FFF;
+    width: 21.5px;
+    height: 21.5px;
+    border-radius: 50%;
+    position: absolute;
+    left: 1.5px;
+    top: 1.5px;
+}
+
+#ovalamarillodentro {
+    background-color: #FCEB5EFF;
+    width: 19.75px;
+    height: 20px;
+    border-radius: 50%;
+    position: absolute;
+}
+
+#ovalamarilloluz {
+    position: absolute;
+    left: 1.5px;
+    top: 5px;
+    width: 5.75px;
+    height: 5.75px;
+    background: #FCEC9E;
+    border-radius: 50%;
+}
