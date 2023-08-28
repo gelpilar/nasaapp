@@ -1,6 +1,11 @@
+@font-face {
+    font-family: 'MiFuente';
+    src: url("/PressStart2P-Regular.ttf");
+  }
 body
 {
     background-color: #DC0A2D;
+    font-family: 'MiFuente';
 }
 #ovalgrisazul {
     background-color: #CFCFD4;
@@ -239,4 +244,74 @@ body
     height: 5.75px;
     background: #FCEC9E;
     border-radius: 50%;
+}
+
+#abajo
+{
+    position: absolute;
+    width: 70%;
+    height: 70%;
+   
+    
+}
+#cuadradogris
+{
+    background-color: #DEDEDE;
+    position: absolute;
+    width: 95%;
+    height: 90%;
+    bottom: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+}
+#cuadradonegro
+{
+    background-color: #242424;
+    position: absolute;
+    width: 95%;
+    height: 85%;
+    
+   
+}
+#rojoabajo
+{
+    position: absolute;
+    bottom: 0px;
+    left: 25px;
+    
+}
+#costado
+{
+    width: 30%;
+    height: 99%;
+    right: 0%;
+   
+    
+    
+    position: absolute;
+    border-left: 1px solid #242424;
+}
+button
+{
+    width: 115px;
+    height: 5%;
+    margin:1px ;
+    color: rgb(255, 255, 255);
+    border-radius: 5px; border: none;font-family: 'MiFuente';
+    font-size: xx-small;
+}
+
+#botones
+{
+    position: relative;
+    top: 22%;
+}
+
+.input-group
+{
+    top: 30%;
+    padding: 10%;
+    color: #d01f1f;
 }
