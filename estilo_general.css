@@ -20,7 +20,68 @@ body
     margin-left: 15px;
     margin-top: 10px;
 }
+.card
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+}
+.card-body h5
+{
+    font-size: 70%;
+}
+.card-body a
+{
+    
+     position: relative;
+     left: 25%;
+     background-color: #d01f1f;
+     border-color: black;
 
+}
+#info1
+{
+    position: relative;
+ 
+    width: 28%; 
+    margin:10px;
+    
+    display: inline-block;
+}
+#info2
+{
+    position: relative;
+ 
+    width: 25%; 
+    margin:10px;
+    
+    display: inline-block;
+}
+#info3
+{
+    position: relative;
+ 
+    width: 25%; 
+    margin:10px;
+    
+    display: inline-block;
+}
+
+#ante
+{
+    position: absolute;
+    
+    top:  90%;
+    left: 20%;
+}
+#sigu
+{
+    position: absolute;
+   
+    top:  90%;
+    left: 50%;
+}
 #ovalazul {
     background-color: #28A9FC;
     width: 90px;
