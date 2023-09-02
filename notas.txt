@@ -1,1 +1,6 @@
-ghjkkgjkhgfdhfd
+COsas que faltan: 
+* Busqueda  y borrado de las demas card
+* Filtrado por tipo
+* + informacion con toda la info del pokemon
+* slice()
+* guardar cosas en arreglo

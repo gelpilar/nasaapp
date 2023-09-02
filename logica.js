@@ -5,8 +5,48 @@
 4. 
  */
 var pagina= 0;
+var pokemon= "";
+
+
+
 const btnAnterior = document.getElementById("ante");
 const btnSiguiente = document.getElementById("sigu");
+const buscador= document.getElementById("buscador");
+
+var inf2= document.getElementById("info2");
+var inf3= document.getElementById("info3");
+var inf1 = document.querySelector("#info1 ");
+console.log(inf1);
+inf1.addEventListener("click", (evento) => {
+    console.log("hola");
+});
+/**
+ * Sacar los elementos y ponerlos en un arreglo
+ * Abstraer la muestra a arreglos
+ * hacer que las etiquetas desaparezcan cuando busque a uno
+ * Guardar los ultimos tres
+ * Cuando borro lo buscado mostrar los ultimos tres
+ * Hacer pantalla de carga 
+ * 
+ */
+
+
+
+buscador.addEventListener("keydown",(e)=>
+{
+    if(e.key=== "Enter")
+    {
+        var valor= buscador.value
+        console.log(valor)
+        pokemon=String(valor);
+        buscarUnPokemon(`https://pokeapi.co/api/v2/pokemon/${pokemon}`);
+    }else if(e.key==="Backspace" && buscador.value!="")
+    {
+        let urlTodo= `https://pokeapi.co/api/v2/pokemon?limit=3&offset=${pagina}`;
+        cargarPokemons(urlTodo);
+    }
+});
+
 btnAnterior.addEventListener("click",()=>
 {
     console.log(pagina)
@@ -14,8 +54,9 @@ btnAnterior.addEventListener("click",()=>
     {
         pagina-=1;
         console.log(pagina);
-       
-        cargarPokemons();
+        let urlTodo= `https://pokeapi.co/api/v2/pokemon?limit=3&offset=${pagina}`;
+
+        cargarPokemons(urlTodo);
         if(pagina==0)
     {
         
@@ -36,14 +77,65 @@ btnSiguiente.addEventListener("click",()=>
     pagina+=1;
     console.log(pagina);
   
-    cargarPokemons();
+    let urlTodo= `https://pokeapi.co/api/v2/pokemon?limit=3&offset=${pagina}`;
+
+    cargarPokemons(urlTodo);
 })
 
-const  cargarPokemons= async()=>
+
+
+function borrarLosElementos(pos)
+{
+    var element = document.createElement('div');
+    element.className = 'card invisible'; 
+    agregarADocumento(element,pos);
+
+}
+
+
+const buscarUnPokemon= async(url)=>
 {
     try {
-        const rta= await fetch(`https://pokeapi.co/api/v2/pokemon?limit=3&offset=${pagina}`);
-        console.log(rta);
+       
+        const rta= await fetch(url);
+        
+        if(rta.status===200)
+        {
+            
+            
+            const datos= await rta.json();
+            console.log(datos);
+            let img= datos.sprites.front_default;
+            let nombre= datos.name;
+            let span= carConImagen(nombre,img);
+            borrarLosElementos(2);
+            borrarLosElementos(3);
+            agregarADocumento(span,1);
+           
+            
+            
+            
+        }
+        else if(rta.status===401)
+        {
+
+        }
+        else if (rta.status===404)
+        {
+
+        }
+       
+        
+    } catch (error) {
+        console.log(error);
+    }
+
+}
+const  cargarPokemons= async(url)=>
+{
+    try {
+       
+        const rta= await fetch(url);
         if(rta.status===200)
         {
             const datos= await rta.json();
@@ -59,14 +151,11 @@ const  cargarPokemons= async()=>
                 nombre= element.name;
                 
             
-                span= carConImagen(nombre,img,i);
+                span= carConImagen(nombre,img);
+                arregloAuxi[i-1]=span;
                 agregarADocumento(span,i);
                 i++;
-            });
-
- 
-           
-           
+            }); 
         }
         else if(rta.status===401)
         {
@@ -83,25 +172,25 @@ const  cargarPokemons= async()=>
     }
     
 };
-cargarPokemons();
+cargarPokemons(`https://pokeapi.co/api/v2/pokemon?limit=3&offset=0`);
+var arregloAuxi=Array();
+
+
+
 function agregarADocumento(element,i)
 {
     let aux = document.getElementById(`info${i}`);
-    console.log(`info${i}`);
-    aux.replaceWith(element);
-}
+    if(i==2)
+    {
+        console.log(aux.getElementsByClassName("card")[0]);
 
-/*<span class="info">
-<div class="card" >
-    <img src="Pokeball_icon-icons.com_67533.png" class="card-img-top" alt="..." style="height: 100px; width: 100px;">
-    <div class="card-body" >
-      <h5 class="card-title">Pokemon</h5>
-      
-      <a href="#" class="btn btn-primary" style="height: 10%;">+</a>
-    </div>
-  </div> 
-  
-</span>*/
+    }
+
+    aux.getElementsByClassName("card")[0].replaceWith(element);
+
+
+    
+}
 
 const cargarImagen=async(url)=>{
     
@@ -137,10 +226,9 @@ const cargarImagen=async(url)=>{
     }
 }
 
-function  carConImagen(nombre, imagen,i)
+function  carConImagen(nombre, imagen)
 {
-    const span = document.createElement('span');
-    span.id = 'info'+i;
+    
   
     const divCard = document.createElement('div');
     divCard.className = 'card';
@@ -171,9 +259,12 @@ function  carConImagen(nombre, imagen,i)
     divCard.appendChild(img);
     divCard.appendChild(divCardBody);
   
-    span.appendChild(divCard);
+    
   
-    return span;
+    return divCard;
     
 
 }
+
+/// busqueda por buscador
+
